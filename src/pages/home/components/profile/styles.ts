@@ -46,6 +46,12 @@ export const NameContainer = styled.div`
     font-size: 0.75rem;
     line-height: 160%;
     text-align: center;
+
+    height: 1.3rem;
+
+    &:hover {
+      border-bottom: 1px solid ${(props) => props.theme.blue};
+    }
   }
 `
 
