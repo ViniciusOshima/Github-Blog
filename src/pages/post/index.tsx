@@ -1,3 +1,4 @@
+import { ContentIssue } from './contentIssue'
 import { IssueDescription } from './issueDescription'
 import { PostContainer, PostInfosContainer } from './styles'
 
@@ -7,7 +8,7 @@ export function Post() {
       <PostInfosContainer>
         <IssueDescription />
 
-        <div>content</div>
+        <ContentIssue />
       </PostInfosContainer>
     </PostContainer>
   )
