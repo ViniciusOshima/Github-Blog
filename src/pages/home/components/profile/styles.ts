@@ -12,6 +12,10 @@ export const ProfileContainer = styled.div`
   border-radius: 10px;
 
   background-color: ${(props) => props.theme['base-profile']};
+
+  margin-top: -6.25rem;
+
+  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.2);
 `
 
 export const ImgProfileContainer = styled.img`
@@ -48,6 +52,10 @@ export const NameContainer = styled.div`
     text-align: center;
 
     height: 1.3rem;
+
+    border-bottom: 1px solid ${(props) => props.theme['base-profile']};
+
+    transition: all 0.3s;
 
     &:hover {
       border-bottom: 1px solid ${(props) => props.theme.blue};
