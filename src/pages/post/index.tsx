@@ -1,5 +1,5 @@
-import { ContentIssue } from './contentIssue'
-import { IssueDescription } from './issueDescription'
+import { ContentIssue } from './components/contentIssue'
+import { IssueDescription } from './components/issueDescription'
 import { PostContainer, PostInfosContainer } from './styles'
 
 export function Post() {

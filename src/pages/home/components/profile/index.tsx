@@ -1,5 +1,4 @@
 import { ArrowSquareOut, Buildings, GithubLogo, Users } from 'phosphor-react'
-import photoTest from '../../../../assets/profilePhotoTest.svg'
 import {
   DescriptionContainer,
   ImgProfileContainer,
@@ -9,38 +8,64 @@ import {
   QualitiesContainer,
   UniqueQualityContainer,
 } from './styles'
+import { useEffect, useState } from 'react'
+
+interface ProfileInfos {
+  avatarImg: string
+  name: string
+  urlProfile: string
+  userName: string
+  followers: number
+  bio: string
+}
 
 export function Profile() {
+  const [profileInfos, setProfileInfos] = useState<ProfileInfos>()
+
+  async function loadProfileInfos() {
+    const response = await fetch('https://api.github.com/users/ViniciusOshima')
+    const data = await response.json()
+
+    setProfileInfos({
+      avatarImg: data.avatar_url,
+      name: data.name,
+      urlProfile: data.html_url,
+      userName: data.login,
+      followers: data.followers,
+      bio: data.bio,
+    })
+  }
+
+  useEffect(() => {
+    loadProfileInfos()
+  }, [])
+
   return (
     <ProfileContainer>
-      <ImgProfileContainer src={photoTest} alt="" />
+      <ImgProfileContainer src={profileInfos?.avatarImg} alt="" />
       <ProfileInfoContainer>
         <NameContainer>
-          <p>Cameron Williamson</p>
-          <a href="">
+          <p>{profileInfos?.name}</p>
+          <a href={profileInfos?.urlProfile}>
             <p>GITHUB</p>
             <ArrowSquareOut size={16} weight="bold" />
           </a>
         </NameContainer>
 
-        <DescriptionContainer>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </DescriptionContainer>
+        <DescriptionContainer>{profileInfos?.bio}</DescriptionContainer>
 
         <QualitiesContainer>
           <UniqueQualityContainer>
             <GithubLogo weight="fill" size={19} />
-            <span>cameronwll</span>
+            <span>{profileInfos?.userName}</span>
           </UniqueQualityContainer>
           <UniqueQualityContainer>
             <Buildings weight="fill" size={19} />
-            <span>Rocketseat</span>
+            <span>Estudante</span>
           </UniqueQualityContainer>
           <UniqueQualityContainer>
             <Users weight="fill" size={19} />
-            <span>32 seguidores</span>
+            <span>{profileInfos?.followers} seguidores</span>
           </UniqueQualityContainer>
         </QualitiesContainer>
       </ProfileInfoContainer>

@@ -1,5 +1,5 @@
 import { CodeContainer, ContentIssueContainer } from './styles'
-import codeImg from '../../../assets/code.svg'
+import codeImg from '../../../../assets/code.svg'
 
 export function ContentIssue() {
   return (

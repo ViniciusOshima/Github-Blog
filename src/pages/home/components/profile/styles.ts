@@ -40,6 +40,8 @@ export const NameContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
+  width: 37rem;
+
   a {
     display: flex;
     gap: 8px;
