@@ -1,21 +1,26 @@
+import { dateFormatter } from '../../../../utils/formatter'
 import {
   ContentIssueContainer,
   IssueContainer,
   TitleIssueContainer,
 } from './style'
 
-export function Issue() {
+interface IssueProps {
+  title: string
+  content: string
+  createdAt: string
+}
+
+export function Issue({ title, content, createdAt }: IssueProps) {
   return (
     <IssueContainer to="/post" title="post">
       <TitleIssueContainer>
-        <p>JavaScript data types and data structures</p>
-        <span>Há 1 dia</span>
+        <p>{title.length > 40 ? title.substring(0, 40) + '...' : title}</p>
+        <span>{dateFormatter.format(new Date(createdAt))}</span>
       </TitleIssueContainer>
 
       <ContentIssueContainer>
-        Programming languages all have built-in data structures, but these often
-        differ from one language to another. This article attempts to list the
-        built-in data structures available in...
+        {content.substring(0, 170) + '...'}
       </ContentIssueContainer>
     </IssueContainer>
   )
