@@ -16,13 +16,7 @@ export const ContentIssueContainer = styled.div`
 
   h3 {
     color: ${(props) => props.theme.blue};
-    line-height: 100%;
+    line-height: 300%;
     font-weight: 400;
-
-    border-bottom: 1px solid ${(props) => props.theme.blue};
-
-    width: 8.5rem;
   }
 `
-
-export const CodeContainer = styled.img``

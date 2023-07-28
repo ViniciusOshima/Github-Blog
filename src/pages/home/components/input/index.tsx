@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { useContext } from 'react'
 import { IssuesContext } from '../../../../contexts/IssuesContext'
+import { debounce } from 'lodash'
 
 const SearchFormSchema = z.object({
   query: z.string(),
@@ -28,7 +29,10 @@ export function SearchForm() {
         <p>Publicações</p>
         <span>{issues.length} publicações</span>
       </PostsStatusContainer>
-      <FormContainer onChange={handleSubmit(handleSearchIssues)} action="">
+      <FormContainer
+        onChange={debounce(handleSubmit(handleSearchIssues), 500)}
+        action=""
+      >
         <input
           type="text"
           placeholder="Buscar conteúdo"

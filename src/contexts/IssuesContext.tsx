@@ -38,7 +38,7 @@ export function IssuesProvider({ children }: IssuesProviderProps) {
         title: response.data.items[i].title,
         content: response.data.items[i].body,
         createdAt: response.data.items[i].created_at,
-        id: response.data.items[i].id,
+        id: response.data.items[i].number,
       }
 
       setIssues((issue) => [...issue, issues])

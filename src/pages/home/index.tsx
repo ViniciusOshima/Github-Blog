@@ -21,6 +21,7 @@ export function Home() {
                 title={issue.title}
                 content={issue.content}
                 createdAt={issue.createdAt}
+                id={issue.id}
               />
             )
           })}
