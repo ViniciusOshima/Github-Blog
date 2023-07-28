@@ -65,7 +65,7 @@ export function Profile() {
           </UniqueQualityContainer>
           <UniqueQualityContainer>
             <Users weight="fill" size={19} />
-            <span>{profileInfos?.followers} seguidores</span>
+            {profileInfos?.followers} seguidores
           </UniqueQualityContainer>
         </QualitiesContainer>
       </ProfileInfoContainer>

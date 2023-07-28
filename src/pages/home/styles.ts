@@ -15,6 +15,7 @@ export const HomeInfosContainer = styled.div`
   width: 100%;
   max-width: 54rem;
   margin: 0 auto;
+  height: 100vh;
 `
 
 export const IssuesContainer = styled.div`

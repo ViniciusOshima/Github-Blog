@@ -23,13 +23,15 @@ export function IssuesProvider({ children }: IssuesProviderProps) {
   const [issues, setIssues] = useState<Issue[]>([])
 
   async function fetchIssues(query?: string) {
+    setIssues([])
+
     const response = await axios.get('https://api.github.com/search/issues', {
       params: {
-        q: `repo:ViniciusOshima/Github-Blog`,
+        q: query
+          ? `repo:ViniciusOshima/Github-Blog ${query}`
+          : `repo:ViniciusOshima/Github-Blog`,
       },
     })
-
-    console.log(response)
 
     for (let i = 0; i < response.data.total_count; i++) {
       const issues = {

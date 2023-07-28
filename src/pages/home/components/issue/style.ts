@@ -20,8 +20,21 @@ export const IssueContainer = styled(NavLink)`
 
   transition: all 0.5s;
 
+  animation-name: opacity;
+  animation-duration: 0.5s;
+
   &:hover {
     border: 2px solid ${(props) => props.theme['base-label']};
+  }
+
+  @keyframes opacity {
+    from {
+      opacity: 0%;
+    }
+
+    to {
+      opacity: 100%;
+    }
   }
 `
 
