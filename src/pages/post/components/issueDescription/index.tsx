@@ -32,7 +32,7 @@ export function IssueDescription({
   return (
     <IssueDescContainer>
       <NavigationContainer>
-        <NavLink to="/Github-Blog">
+        <NavLink to="/">
           <CaretLeft size={16} weight="bold" />
           <span>VOLTAR</span>
         </NavLink>
