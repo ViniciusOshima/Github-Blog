@@ -10,9 +10,9 @@ Nesse desafio desenvolvi uma aplicação que utiliza da API do GitHub para busca
 
 ### Github Blog possui as seguintes funcionalidades:
 
-+ Listagem do meu perfil com imagem, número de seguidores, nome e outras informações disponíveis pela API do GitHub.
-+ Listar e filtrar todas as issues do repositório com um pequeno resumo do conteúdo dela
-+ Criar uma página para exibir um post (issue) completo
++ Listagem do meu perfil com imagem, número de seguidores, nome e outras informações disponíveis pela API do GitHub. ✅
++ Listar e filtrar todas as issues do repositório com um pequeno resumo do conteúdo dela. ✅
++ Criar uma página para exibir um post (issue) completo. ✅
 
 ### Adaptações utilizadas no desafio
 
